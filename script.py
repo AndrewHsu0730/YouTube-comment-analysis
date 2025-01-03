@@ -56,16 +56,16 @@ df["Comments"] = df["Comments"].apply(translate_comment)
 
 
 # Comment processing
-url_pattern = "https?://(www\.)?[-a-zA-Z0-9@:%._\\+~#?&/=]+\.[a-z]{2,6}[-a-zA-Z0-9()@:%._\\+~#?&/=]*"
+url_pattern = r"https?://(www\.)?[-a-zA-Z0-9@:%._\\+~#?&/=]+\.[a-z]{2,6}[-a-zA-Z0-9()@:%._\\+~#?&/=]*"
 
 df["Comments"] = (
     df["Comments"]
     .str.replace(url_pattern, "", regex = True)
-    .str.replace("#\S+", "", regex = True)
-    .str.replace("[^\w\s']+", "", regex = True)
-    .str.replace("\d+", "", regex = True)
+    .str.replace(r"#\S+", "", regex = True)
+    .str.replace(r"[^\w\s']+", "", regex = True)
+    .str.replace(r"\d+", "", regex = True)
     .str.replace("_", " ")
-    .str.replace("\s+", " ", regex = True)
+    .str.replace(r"\s+", " ", regex = True)
     .str.strip()
     .str.lower()
 )

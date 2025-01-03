@@ -1,2 +1,2 @@
 def API_KEY():
-    return "AIzaSyBYBRGRvi0N_wat1S91D24IE24vAIqHdjU"
+    return "AIzaSyDjvHRY4MW_6Y-N4YJz09WdMBobu_sggNg"
